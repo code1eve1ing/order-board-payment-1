@@ -1,0 +1,9 @@
+POST#api/payment/link
+
+curl -XGET -H 'authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTc1MTQ3NjkwNywiZXhwIjoxNzUyMDgxNzA3fQ.XTWqANVszVl6uizniPiCl6CI_2ef7oWx9-hGnyQVz5M' 'http://localhost:5001/api/payment/link'
+
+$headers = @{
+    Authorization = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTc1MTQ3NjkwNywiZXhwIjoxNzUyMDgxNzA3fQ.XTWqANVszVl6uizniPiCl6CI_2ef7oWx9-hGnyQVz5M'
+}
+
+Invoke-WebRequest -Uri 'http://localhost:5001/api/payment/link' -Headers $headers -Method Get
