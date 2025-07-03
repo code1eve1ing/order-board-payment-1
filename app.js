@@ -3,11 +3,8 @@ const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const session = require('express-session');
-const passport = require('passport');
 const paymentRoutes = require("./routes/payment.route");
 const planRoutes = require("./routes/plan.route");
-
-require('./config/passport')
 
 // Initialize Express app
 const app = express();
@@ -29,8 +26,6 @@ app.use(
         saveUninitialized: false,
     })
 );
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Routes
 app.use("/api/payment", paymentRoutes);

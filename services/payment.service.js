@@ -8,7 +8,7 @@ exports.getPaymentLink = async (req, res) => {
         console.log('id', id)
         const { planId } = req.query;
 
-        const response = await axios.post("http://localhost:5000/api/auth/validate/user", { id });
+        const response = await axios.post(process.env.AUTH_SERVICE_URL + "/auth/validate/user", { id });
 
         if (response.data.success === true) {
 
