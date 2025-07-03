@@ -5,7 +5,6 @@ const { getUpi } = require("../utils/upi");
 exports.getPaymentLink = async (req, res) => {
     try {
         const { id } = req.user;
-        console.log('id', id)
         const { planId } = req.query;
 
         const response = await axios.post(process.env.AUTH_SERVICE_URL + "/auth/validate/user", { id });
